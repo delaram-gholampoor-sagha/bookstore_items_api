@@ -2,8 +2,10 @@ package elastic_search
 
 import (
 	"context"
+	"fmt"
 	"time"
 
+	"github.com/Delaram-Gholampoor-Sagha/bookstore_utils-go/logger"
 	"github.com/olivere/elastic"
 )
 
@@ -12,8 +14,8 @@ var (
 )
 
 type esClientInterface interface {
-	setClient(client *elastic.Client) 
-	Index(interface{}) (*elastic.IndexResponse, error)
+	setClient(client *elastic.Client)
+	Index(string, interface{}) (*elastic.IndexResponse, error)
 }
 
 type esClient struct {
@@ -40,8 +42,14 @@ func (c *esClient) setClient(client *elastic.Client) {
 
 }
 
-func (c *esClient) Index(interface{}) (*elastic.IndexResponse, error) {
+func (c *esClient) Index(index string, doc interface{}) (*elastic.IndexResponse, error) {
 
 	ctx := context.Background()
-	return c.client.Index().Do(ctx)
+	result, err := c.client.Index().Index(index).BodyJson(doc).Do(ctx)
+	if err != nil {
+		logger.Error(fmt.Sprintf("error when trying to index document in index %s", index), err)
+		return nil, err
+	}
+	return result, nil
+
 }
