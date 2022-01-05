@@ -7,7 +7,7 @@ const (
 )
 
 var (
-	PongController pingControllerInterface = &pingController{}
+	PingController pingControllerInterface = &pingController{}
 )
 
 type pingControllerInterface interface {
