@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/Delaram-Gholampoor-Sagha/bookstore_items_api/clients/elastic_search"
+	"github.com/Delaram-Gholampoor-Sagha/bookstore_items_api/src/clients/elastic_search"
 	"github.com/gorilla/mux"
 )
 
@@ -19,7 +19,7 @@ func StartApplication() {
 
 	srv := &http.Server{
 		Handler:      router,
-		Addr:         ":8000",
+		Addr:         ":8081",
 		WriteTimeout: 500 * time.Millisecond,
 		ReadTimeout:  2 * time.Second,
 		IdleTimeout:  60 * time.Second,

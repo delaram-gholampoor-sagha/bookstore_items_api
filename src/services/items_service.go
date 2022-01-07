@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/Delaram-Gholampoor-Sagha/bookstore_items_api/domain/items"
-	"github.com/Delaram-Gholampoor-Sagha/bookstore_items_api/domain/queries"
+	"github.com/Delaram-Gholampoor-Sagha/bookstore_items_api/src/domain/items"
+	"github.com/Delaram-Gholampoor-Sagha/bookstore_items_api/src/domain/queries"
 	"github.com/Delaram-Gholampoor-Sagha/bookstore_utils-go/rest_errors"
 )
 

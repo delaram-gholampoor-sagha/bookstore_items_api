@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Delaram-Gholampoor-Sagha/bookstore_items_api/clients/elastic_search"
-	"github.com/Delaram-Gholampoor-Sagha/bookstore_items_api/domain/queries"
+	"github.com/Delaram-Gholampoor-Sagha/bookstore_items_api/src/clients/elastic_search"
+	"github.com/Delaram-Gholampoor-Sagha/bookstore_items_api/src/domain/queries"
 	"github.com/Delaram-Gholampoor-Sagha/bookstore_utils-go/rest_errors"
 )
 
